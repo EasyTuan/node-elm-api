@@ -1,0 +1,62 @@
+{
+  "name": "node-elm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "cangdu <1264889788@qq.com>",
+  "license": "GPL",
+  "private": true,
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development supervisor --harmony index.js",
+    "check": "cross-env NODE_ENV=check supervisor  --harmony index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cross-env NODE_ENV=production pm2 start index.js --node-args='--harmony' --name 'node-elm --port 8001'",
+    "stop": "cross-env NODE_ENV=production pm2 stop index.js --name 'node-elm --port 8001'",
+    "restart": "cross-env NODE_ENV=production pm2 restart index.js --node-args='--harmony' --name 'node-elm --port 8001'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bailicangdu/node-elm"
+  },
+  "dependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.0",
+    "babel-preset-es2015": "^6.24.0",
+    "babel-preset-stage-3": "^6.22.0",
+    "babel-register": "^6.24.0",
+    "bluebird": "^3.5.0",
+    "captchapng": "0.0.1",
+    "chalk": "^2.3.0",
+    "config-lite": "^1.5.0",
+    "connect-flash": "^0.1.1",
+    "connect-history-api-fallback": "^1.3.0",
+    "connect-mongo": "^1.3.2",
+    "cookie-parser": "^1.4.3",
+    "cross-env": "^5.0.0",
+    "express": "^4.15.2",
+    "express-session": "^1.15.2",
+    "express-winston": "^2.3.0",
+    "formidable": "^1.1.1",
+    "gm": "^1.23.0",
+    "marked": "^0.3.6",
+    "moment": "^2.18.1",
+    "mongodb": "^2.2.25",
+    "mongoose": "^4.9.3",
+    "node-fetch": "^1.6.3",
+    "pinyin": "^2.8.3",
+    "pm2": "^2.8.0",
+    "qiniu": "^6.1.13",
+    "sha1": "^1.1.1",
+    "supervisor": "^0.12.0",
+    "time-formater": "^1.0.1",
+    "time-stamp": "^2.0.0",
+    "winston": "^2.3.1"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-plugin-transform-es2015-classes": "^6.24.1",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
+    "babel-plugin-transform-export-extensions": "^6.22.0"
+  }
+}
