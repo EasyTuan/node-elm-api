@@ -38,6 +38,16 @@ npm run dev
 npm run dev
 ```
 
+mongodb常用命令
+
+```sh
+mongod --config /usr/local/etc/mongod.conf  # 启动
+或
+mongod --dbpath .                           # 启动
+
+mongo                                       # 进入mongo命令行
+```
+
 # 目标功能
  暂定...
 

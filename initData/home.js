@@ -1,0 +1,31 @@
+export default [{
+	imgUrl: 'a867c870b22bc74c87c348b75528djpeg.png',
+	text: '美食'
+}, {
+	imgUrl: '185f7259ebda19e16123884a60ef2jpeg.png',
+	text: '晚餐'
+}, {
+	imgUrl: '76a23eb90dada42528bc41499d6f8jpeg.png',
+	text: '商超便利'
+}, {
+	imgUrl: 'dd7c960f08cdc756b1d3ad54978fdjpeg.png',
+	text: '水果'
+}, {
+	imgUrl: 'af108e256ebc9f02db599592ae655jpeg.png',
+	text: '医药健康'
+}, {
+	imgUrl: 'c888acb2c8ba9e0c813f36ec9e90ajpeg.png',
+	text: '浪漫鲜花'
+}, {
+	imgUrl: 'e42997b86b232161a5a16ab813ae8jpeg.png',
+	text: '厨房生鲜'
+}, {
+	imgUrl: 'bceb19258e3264e64fb856722c3c1jpeg.png',
+	text: '跑腿代购'
+}, {
+	imgUrl: '6f2631288a44ec177204e05cbcb93jpeg.png',
+	text: '地方小吃'
+}, {
+	imgUrl: 'b7ba9547aa700bd20d0420e1794a8jpeg.png',
+	text: '麻辣烫'
+}]
