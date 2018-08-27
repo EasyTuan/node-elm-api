@@ -10,9 +10,10 @@
     "dev": "cross-env NODE_ENV=development nodemon index.js",
     "mongod": "mongod --dbpath ~/mongodb/data",
     "mongo": "node node_modules/admin-mongo/app",
-    "start": "cross-env NODE_ENV=production pm2 start index.js --node-args='--harmony' --name 'node-elm-api --port 9000'",
-    "stop": "cross-env NODE_ENV=production pm2 stop index.js --name 'node-elm-api --port 9000'",
-    "restart": "cross-env NODE_ENV=production pm2 restart index.js --node-args='--harmony' --name 'node-elm-api --port 9000'"
+    "start": "cross-env NODE_ENV=production pm2 start index.js --node-args='--harmony' --name 'node-elm-api'",
+    "stop": "cross-env NODE_ENV=production pm2 stop index.js --name 'node-elm-api'",
+    "restart": "cross-env NODE_ENV=production pm2 restart index.js --node-args='--harmony' --name 'node-elm-api'",
+    "delete": "pm2 delete node-elm-api"
   },
   "repository": {
     "type": "git",
