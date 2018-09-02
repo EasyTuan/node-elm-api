@@ -7,6 +7,7 @@ class Admin {
 	constructor(){
 		this.login = this.login.bind(this);
 		this.encryption = this.encryption.bind(this);
+		this.retsetPassword = this.retsetPassword.bind(this);
 	}
 	async login(req, res, next){
 		const { mobile, password } = req.body;
@@ -54,7 +55,7 @@ class Admin {
 		}catch(err){
 			res.send({
 				code: -1,
-				msg: '登录失败,遇到了不可预料的错误',
+				msg: String(err),
 				data:null,
 			})
 		}
@@ -73,7 +74,7 @@ class Admin {
 	async selectUserInfo(res, user_id) {
 		if (!user_id) {
 			res.send({
-				code: 0,
+				code: -1,
 				msg: '获取用户信息失败',
 				data: null
 			})
@@ -93,7 +94,89 @@ class Admin {
 		}catch(err){
 			res.send({
 				code: -1,
-				msg: '获取用户信息失败,遇到了不可预知的错误',
+				msg: err.message,
+				data: null
+			})
+		}
+	}
+	async retsetName(req, res, next) {
+		const { username } = req.body;
+		const { userInfo } = req.cookies;
+		try{
+			if (!username) {
+				throw new Error('用户名不可为空');
+			}else if(username.length<5 || username.length>24) {
+				throw new Error('用户名长度不合法');
+			}else if(!userInfo || !JSON.parse(userInfo).user_id) {
+				throw new Error('登录已过期');
+			}
+		}catch(err){
+			res.send({
+				code: -1,
+				msg: err.message,
+				data: null
+			})
+			return;
+		}
+		try{
+			const info = await UserModel.findOneAndUpdate({user_id: JSON.parse(userInfo).user_id},{$set: {username}});
+			if (!info) {
+				throw new Error('用户不存在')
+			}else{
+				res.send({
+					code: 0,
+					msg: '更新用户信息成功',
+					data: info
+				})
+			}
+		}catch(err){
+			res.send({
+				code: -1,
+				msg: err.message,
+				data: null
+			})
+		}
+	}
+	async retsetPassword(req, res, next) {
+		const { oldpassword, newpassword } = req.body;
+		const { userInfo } = req.cookies;
+		try{
+			if (!oldpassword) {
+				throw new Error('请输入旧密码');
+			}else if(!newpassword) {
+				throw new Error('请输入新密码');
+			}else if(!userInfo || !JSON.parse(userInfo).user_id) {
+				throw new Error('登录已过期');
+			}
+		}catch(err){
+			res.send({
+				code: -1,
+				msg: err.message,
+				data: null
+			})
+			return;
+		}
+		try{
+			const info = await UserModel.findOneAndUpdate({
+				user_id: JSON.parse(userInfo).user_id, 
+				password:this.encryption(oldpassword)},
+				{$set: {
+					password: this.encryption(newpassword)
+				}
+			});
+			if (!info) {
+				throw new Error('原密码错误，请重新输入')
+			}else{
+				res.send({
+					code: 0,
+					msg: '更新密码成功',
+					data: info
+				})
+			}
+		}catch(err){
+			res.send({
+				code: -1,
+				msg: err.message ,
 				data: null
 			})
 		}

@@ -6,10 +6,15 @@
   "author": "[easytuan] <[easytuan@foxmail.com]>",
   "license": "GPL",
   "private": true,
+  "apidoc": {
+    "title": "elm-api接口文档",
+    "url" : "http://47.100.122.91:9000"
+  },
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon index.js",
     "mongod": "mongod --dbpath ~/mongodb/data",
     "mongo": "node node_modules/admin-mongo/app",
+    "doc": "apidoc -i routes/ -o doc/",
     "start": "cross-env NODE_ENV=production pm2 start index.js --node-args='--harmony' --name 'node-elm-api'",
     "stop": "cross-env NODE_ENV=production pm2 stop index.js --name 'node-elm-api'",
     "restart": "cross-env NODE_ENV=production pm2 restart index.js --node-args='--harmony' --name 'node-elm-api'",
@@ -26,6 +31,7 @@
     "body-parser": "^1.18.3",
     "chalk": "^2.4.1",
     "config-lite": "^1.6.0",
+    "cookie-parser": "^1.4.3",
     "cross-env": "^5.2.0",
     "express": "^4.16.3",
     "gm": "^1.23.1",
@@ -37,6 +43,7 @@
   },
   "devDependencies": {
     "admin-mongo": "^0.0.23",
+    "apidoc": "^0.17.6",
     "babel-plugin-transform-runtime": "^6.23.0",
     "nodemon": "^1.18.3"
   }
