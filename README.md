@@ -151,6 +151,12 @@ npm run start
 
 >  如有问题请直接在 Issues 中提，或者您发现问题并有非常好的解决方案，欢迎 PR 👍
 
+# 捐助
+
+如有帮助，欢迎打赏
+
+<img src="screenshots/wechat.jpg" width="200px" /> <img src="screenshots/alipay.jpg" width="200px" />
+
 # 友情链接
 
 [前端项目传送地址](https://github.com/EasyTuan/nuxt-elm)
