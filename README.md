@@ -1,6 +1,8 @@
 # 前言
 
-暂无
+为[nuxt-elm](https://github.com/EasyTuan/nuxt-elm)提供接口服务。
+
+如遇网络不佳，请移步[国内镜像加速节点](https://gitee.com/easytuan/node-elm-api)
 
 # 效果演示
 
@@ -10,10 +12,13 @@
 
 <img src="./screenshots/qr-code.png" width="250" height="250"/>
 
+# API接口文档
+
+[接口文档地址](http://47.100.122.91:9000/)（基于apidoc）
+
 # 技术栈
 
 nodejs + express + mongodb + mongoose + es6/7
-
 
 ## 项目运行
 
@@ -34,24 +39,35 @@ npm run dev
 #### 1.2.1 命令
 
 ```sh
+
 # 开发
 npm run dev
-```
 
-mongodb常用命令
+# 启动mongodb（确保已经安装了mongodb）
+npm run mongod
 
-```sh
-mongod --config /usr/local/etc/mongod.conf  # 启动
-或
-mongod --dbpath .                           # 启动
+# 开启浏览器GUI界面查看mongodb（默认端口1234）
+npm run mongo
 
-mongo                                       # 进入mongo命令行
+# 生成api文档（基于apidoc）
+npm run doc
+
+# 生产部署（pm2进程守护）
+npm run start
+
 ```
 
 # 目标功能
- 暂定...
+- [x] 商家列表 -- 完成
+- [x] 购物车功能 -- 完成
+- [x] 餐馆食品列表页 -- 完成
+- [x] 店铺评价页面 -- 完成
+- [x] 商家详情页 -- 完成
+- [x] 登录、注册 -- 完成
+- [x] 修改密码 -- 完成
+- [x] 个人中心 -- 完成
+- [x] 红包 -- 完成
 
-# 业务介绍
 
 
 目录结构
@@ -61,7 +77,27 @@ mongo                                       # 进入mongo命令行
 
 ## 部分截图展示
 
-暂无
+## 部分截图展示
+
+### 首页展示
+
+<img src="screenshots/1.png" width="375px" height="667px" /> <img src="screenshots/1.gif" width="375px" height="667px" />
+
+### 个人资料
+
+<img src="screenshots/2.png" width="375px" height="667px" /> <img src="screenshots/2.gif" width="375px" height="667px" />
+
+### 我的
+
+<img src="screenshots/3.png" width="375px" height="667px" /> <img src="screenshots/3.gif" width="375px" height="667px" />
+
+### 订餐
+
+<img src="screenshots/4.png" width="375px" height="667px" /> <img src="screenshots/4.gif" width="375px" height="667px" />
+
+### 商家评价
+
+<img src="screenshots/5.png" width="375px" height="667px" /> <img src="screenshots/5.gif" width="375px" height="667px" />
 
 # 说明
 
@@ -75,7 +111,9 @@ mongo                                       # 进入mongo命令行
 
 >  如有问题请直接在 Issues 中提，或者您发现问题并有非常好的解决方案，欢迎 PR 👍
 
->  相关项目地址：[前端项目传送地址](https://github.com/EasyTuan/nuxt-elm)
+# 友情链接
+
+[前端项目传送地址](https://github.com/EasyTuan/nuxt-elm)
 
 # License
 

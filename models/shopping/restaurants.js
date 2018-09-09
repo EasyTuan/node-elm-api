@@ -6,6 +6,7 @@ const Schema = mongoose.Schema;
 const restaurantsDataSchema = new Schema({
 	"name": String,
 	"address": String,
+	"id": Number,
 	"latitude": Number,
 	"longitude": Number,
 	"location": [],

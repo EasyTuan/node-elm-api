@@ -105,7 +105,7 @@ class Admin {
 		try{
 			if (!username) {
 				throw new Error('用户名不可为空');
-			}else if(username.length<5 || username.length>24) {
+			}else if(username.length<2 || username.length>24) {
 				throw new Error('用户名长度不合法');
 			}else if(!userInfo || !JSON.parse(userInfo).user_id) {
 				throw new Error('登录已过期');

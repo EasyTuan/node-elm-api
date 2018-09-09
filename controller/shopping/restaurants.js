@@ -1,9 +1,10 @@
 import restaurantsModel from '../../models/shopping/restaurants';
 
-class HomeData {
+class restaurantsData {
 	async restaurants(req, res, next) {
 		try{
 			const restaurantsList = await restaurantsModel.find();
+			console.log(restaurantsList)
 			res.send({
 				code: 0,
 				msg: null,
@@ -19,4 +20,4 @@ class HomeData {
 	}
 }
 
-export default new HomeData();
+export default new restaurantsData();
