@@ -96,7 +96,7 @@ npm run start
 	│   │   ├── business.js             // 餐馆详情模型
 	│   │   └── restaurants.js          // 商家列表模型
 	│   └── user
-	│       └── user.js              	// 用户中心
+	│       └── user.js                 // 用户中心
 	├── mongodb                         // 连接数据库
 	│   └── db.js
 	├── public                          // 静态资源目录
@@ -105,12 +105,12 @@ npm run start
 	│   ├── index.js                    // 路由配置主文件
 	│   ├── shopping.js                 // 餐馆、食品
 	│   └── user.js                     // 用户中心
-	├── screenshots                     项目截图
+	├── screenshots                     // 项目截图
 	├── .babelrc 
 	├── .gitignore
-	├── app.js                          基础配置
-	├── COPYING                         GPL协议
-	├── index.js                        入口文件
+	├── app.js                          // 基础配置
+	├── COPYING                         // GPL协议
+	├── index.js                        // 入口文件
 	├── package.json
 	└── README.md                  
 
