@@ -2,6 +2,7 @@ import express from 'express';
 const router = express.Router();
 
 import user from '../controller/user/user';
+import address from '../controller/user/address';
 
 /**
  * @api {post} /user/login login
@@ -35,6 +36,7 @@ import user from '../controller/user/user';
  *
  */
 router.post('/login', user.login);
+
 /**
  * @api {post} /user/retsetName retsetName
  * @apiDescription 修改用户名
@@ -66,6 +68,7 @@ router.post('/login', user.login);
  *
  */
 router.post('/retsetName', user.retsetName);
+
 /**
  * @api {post} /user/retsetPassword retsetPassword
  * @apiDescription 修改密码
@@ -98,5 +101,94 @@ router.post('/retsetName', user.retsetName);
  *
  */
 router.post('/retsetPassword', user.retsetPassword);
+
+/**
+ * @api {get} /user/getAddress getAddress
+ * @apiDescription 获取用户地址列表
+ * @apiGroup user
+ * @apiVersion 1.0.0
+ * 
+ *
+ * @apiSuccess {Number} code 成功状态码
+ * @apiSuccess {String} msg 返回信息
+ * @apiSuccess {Array} data 返回用户地址列表
+ *
+ * @apiSuccessExample Success-Response:
+ *    HTTP/1.1 200 OK
+ *      {
+ *        "code": 0,
+ *        "msg": "更新密码成功",
+ *        "data": []
+ *      }
+ *
+ */
+router.get('/getAddress', address.getAddress);
+
+/**
+ * @api {get} /user/getAddAddressById getAddAddressById
+ * @apiDescription 获取用户地址详情
+ * @apiGroup user
+ * @apiVersion 1.0.0
+ * 
+ *
+ * @apiSuccess {Number} code 成功状态码
+ * @apiSuccess {String} msg 返回信息
+ * @apiSuccess {Object} data 返回用户地址
+ *
+ * @apiSuccessExample Success-Response:
+ *    HTTP/1.1 200 OK
+ *      {
+ *        "code": 0,
+ *        "msg": "获取地址信息成功",
+ *        "data": {}
+ *      }
+ *
+ */
+router.get('/getAddAddressById', address.getAddAddressById);
+
+/**
+ * @api {post} /user/addAddress addAddress
+ * @apiDescription 添加用户地址
+ * @apiGroup user
+ * @apiVersion 1.0.0
+ * 
+ *
+ * @apiSuccess {Number} code 成功状态码
+ * @apiSuccess {String} msg 返回信息
+ * @apiSuccess {null} data 
+ *
+ * @apiSuccessExample Success-Response:
+ *    HTTP/1.1 200 OK
+ *      {
+ *        "code": 0,
+ *        "msg": "添加地址成功",
+ *        "data": null
+ *      }
+ *
+ */
+router.post('/addAddress', address.addAddress);
+
+/**
+ * @api {delete} /user/deleteAddress deleteAddress
+ * @apiDescription 删除用户地址
+ * @apiGroup user
+ * @apiVersion 1.0.0
+ * 
+ *
+ * @apiSuccess {Number} code 成功状态码
+ * @apiSuccess {String} msg 返回信息
+ * @apiSuccess {null} data 
+ *
+ * @apiSuccessExample Success-Response:
+ *    HTTP/1.1 200 OK
+ *      {
+ *        "code": 0,
+ *        "msg": "删除地址成功",
+ *        "data": null
+ *      }
+ *
+ */
+router.delete('/deleteAddress', address.deleteAddress);
+
 
 export default router;

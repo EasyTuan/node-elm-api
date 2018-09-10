@@ -67,6 +67,7 @@ npm run start
 - [x] 修改密码 -- 完成
 - [x] 个人中心 -- 完成
 - [x] 红包 -- 完成
+- [x] 收货地址 -- 完成
 
 
 # 目录结构
@@ -82,6 +83,7 @@ npm run start
 	│   │   ├── business.js             // 餐馆详情
 	│   │   └── restaurants.js          // 商家列表
 	│   └── user
+	│   │   ├── address.js              // 用户地址
 	│       └── user.js                 // 用户中心
 	├── doc                             // apidoc自动生成的静态文档
 	├── InitData                        // 模拟数据
@@ -95,6 +97,7 @@ npm run start
 	│   │   ├── business.js             // 餐馆详情模型
 	│   │   └── restaurants.js          // 商家列表模型
 	│   └── user
+	│       ├── address.js              // 用户地址
 	│       └── user.js                 // 用户中心
 	├── mongodb                         // 连接数据库
 	│   └── db.js
