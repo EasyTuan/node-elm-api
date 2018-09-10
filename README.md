@@ -69,7 +69,6 @@ npm run start
 - [x] 红包 -- 完成
 
 
-
 目录结构
 
 	├── config                          // 配置文件
@@ -113,9 +112,6 @@ npm run start
 	├── index.js                        // 入口文件
 	├── package.json
 	└── README.md                  
-
-
-## 部分截图展示
 
 ## 部分截图展示
 
