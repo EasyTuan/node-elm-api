@@ -69,7 +69,7 @@ npm run start
 - [x] 红包 -- 完成
 
 
-目录结构
+# 目录结构
 
 	├── config                          // 配置文件
 	│   ├── default.js                  // 默认配置
@@ -113,6 +113,7 @@ npm run start
 	├── package.json
 	└── README.md                  
 
+
 ## 部分截图展示
 
 ### 首页展示
@@ -135,6 +136,7 @@ npm run start
 
 <img src="screenshots/5.png" width="375px" height="667px" /> <img src="screenshots/5.gif" width="375px" height="667px" />
 
+
 # 说明
 
 >  如果对您有帮助，您可以点右上角 "Star" 支持一下 谢谢！ ^_^
@@ -147,11 +149,13 @@ npm run start
 
 >  如有问题请直接在 Issues 中提，或者您发现问题并有非常好的解决方案，欢迎 PR 👍
 
+
 # 捐助
 
 如有帮助，欢迎打赏
 
 <img src="screenshots/wechat.jpg" width="200px" /> <img src="screenshots/alipay.jpg" width="200px" />
+
 
 # 友情链接
 
