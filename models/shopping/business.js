@@ -9,13 +9,15 @@ const businessDataSchema = new Schema({
 	"ratings": [],
 })
 
-businessDataSchema.index({id: 1});
+businessDataSchema.index({
+	id: 1
+});
 
 const BusinessData = mongoose.model('BusinessData', businessDataSchema);
 
 //如果数据库为空，添加初始化数据
 BusinessData.findOne((err, data) => {
-	if (!data) {
+	if(!data) {
 		business.forEach(item => {
 			BusinessData.create(item);
 		})

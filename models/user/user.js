@@ -8,10 +8,15 @@ const userSchema = new Schema({
 	username: String,
 	password: String,
 	create_time: String,
-	avatar: {type: String, default: null},
+	avatar: {
+		type: String,
+		default: null
+	},
 })
 
-userSchema.index({id: 1});
+userSchema.index({
+	id: 1
+});
 
 const User = mongoose.model('User', userSchema);
 

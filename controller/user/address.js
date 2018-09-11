@@ -3,13 +3,15 @@ import dtime from 'time-formater';
 import uuid from 'uuid/v4';
 
 class Address {
-	async getAddress(req, res, next){
-		const { userInfo } = req.cookies;
-		try{
+	async getAddress(req, res, next) {
+		const {
+			userInfo
+		} = req.cookies;
+		try {
 			if(!userInfo || !JSON.parse(userInfo).user_id) {
 				throw new Error('user_id参数错误');
 			}
-		}catch(err){
+		} catch(err) {
 			res.send({
 				code: -1,
 				msg: err.message,
@@ -17,14 +19,16 @@ class Address {
 			})
 			return;
 		}
-		try{
-			const addressList = await AddressModel.find({user_id: JSON.parse(userInfo).user_id});
+		try {
+			const addressList = await AddressModel.find({
+				user_id: JSON.parse(userInfo).user_id
+			});
 			res.send({
 				code: 0,
 				msg: null,
 				data: addressList
 			})
-		}catch(err){
+		} catch(err) {
 			console.log('获取收获地址失败', err);
 			res.send({
 				code: -1,
@@ -33,24 +37,28 @@ class Address {
 			})
 		}
 	}
-	async getAddAddressById(req, res, next){
-		const { address_id } = req.body;
-		if (!address_id) {
+	async getAddAddressById(req, res, next) {
+		const {
+			address_id
+		} = req.body;
+		if(!address_id) {
 			res.send({
 				code: -1,
 				msg: '参数错误',
 				data: null
 			})
-			return 
+			return
 		}
-		try{
-			const address = await AddressModel.findOne({id: address_id});
+		try {
+			const address = await AddressModel.findOne({
+				id: address_id
+			});
 			res.send({
 				code: 0,
 				msg: '获取地址信息成功',
 				data: address
 			})
-		}catch(err){
+		} catch(err) {
 			res.send({
 				code: -1,
 				msg: '获取地址信息失败',
@@ -58,20 +66,27 @@ class Address {
 			})
 		}
 	}
-	async addAddress(req, res, next){
-		const { name, phone, address, details } = req.body;
-		const { userInfo } = req.cookies;
-		try{
+	async addAddress(req, res, next) {
+		const {
+			name,
+			phone,
+			address,
+			details
+		} = req.body;
+		const {
+			userInfo
+		} = req.cookies;
+		try {
 			if(!userInfo || !JSON.parse(userInfo).user_id) {
 				throw new Error('user_id参数错误');
-			}else if(!name) {
+			} else if(!name) {
 				throw new Error('姓名不可为空');
-			}else if(!phone) {
+			} else if(!phone) {
 				throw new Error('手机号不可为空');
-			}else if(!address) {
+			} else if(!address) {
 				throw new Error('地址不可为空');
 			}
-		}catch(err){
+		} catch(err) {
 			res.send({
 				code: -1,
 				msg: err.message,
@@ -79,7 +94,7 @@ class Address {
 			})
 			return;
 		}
-		try{	
+		try {
 			const newAddress = {
 				id: uuid(),
 				user_id: JSON.parse(userInfo).user_id,
@@ -95,7 +110,7 @@ class Address {
 				msg: '添加地址成功',
 				data: null
 			})
-		}catch(err){
+		} catch(err) {
 			console.log('添加地址失败', err);
 			res.send({
 				code: -1,
@@ -104,17 +119,21 @@ class Address {
 			})
 		}
 	}
-	async deleteAddress(req, res, next){
-		const { address_id } = req.query;
-//		console.log(req.query('address_id'))
-		const { userInfo } = req.cookies;
-		try{
+	async deleteAddress(req, res, next) {
+		const {
+			address_id
+		} = req.query;
+		//		console.log(req.query('address_id'))
+		const {
+			userInfo
+		} = req.cookies;
+		try {
 			if(!userInfo || !JSON.parse(userInfo).user_id) {
 				throw new Error('user_id参数错误');
-			}else if(!address_id) {
+			} else if(!address_id) {
 				throw new Error('address_id参数错误');
 			}
-		}catch(err){
+		} catch(err) {
 			res.send({
 				code: -1,
 				msg: err.message,
@@ -122,14 +141,16 @@ class Address {
 			})
 			return;
 		}
-		try{
-			await AddressModel.findOneAndRemove({id: address_id});
+		try {
+			await AddressModel.findOneAndRemove({
+				id: address_id
+			});
 			res.send({
 				code: 0,
 				msg: '删除地址成功',
 				data: null
 			})
-		}catch(err){
+		} catch(err) {
 			res.send({
 				code: -1,
 				msg: '删除收获地址失败',

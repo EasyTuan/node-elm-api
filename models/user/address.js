@@ -9,11 +9,19 @@ const addressSchema = new Schema({
 	phone: String,
 	address: String,
 	details: String,
-	is_valid: {type: Number, default: 1},
-	created_at: {type: Date, default: Date.now()},
+	is_valid: {
+		type: Number,
+		default: 1
+	},
+	created_at: {
+		type: Date,
+		default: Date.now()
+	},
 })
 
-addressSchema.index({id: 1});
+addressSchema.index({
+	id: 1
+});
 
 const Address = mongoose.model('Address', addressSchema);
 

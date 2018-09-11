@@ -11,21 +11,23 @@ const app = express();
 
 //用于接收post参数
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({
+	extended: false
+}));
 
 //用于接收cookie
 app.use(cookieParser());
 
-app.use(express.static(path.join(__dirname, 'public'),{
-	maxAge:'30 days'
+app.use(express.static(path.join(__dirname, 'public'), {
+	maxAge: '30 days'
 }));
-app.use(express.static(path.join(__dirname, 'doc'),{
-	maxAge:'1 days'
+app.use(express.static(path.join(__dirname, 'doc'), {
+	maxAge: '1 days'
 }));
 
 router(app);
 
-app.use((req, res, next)=> {
+app.use((req, res, next) => {
 	res.send(404);
 })
 

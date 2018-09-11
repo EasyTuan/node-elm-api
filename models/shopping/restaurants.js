@@ -35,13 +35,15 @@ const restaurantsDataSchema = new Schema({
 	"__v": Number,
 })
 
-restaurantsDataSchema.index({id: 1});
+restaurantsDataSchema.index({
+	id: 1
+});
 
 const RestaurantsData = mongoose.model('RestaurantsData', restaurantsDataSchema);
 
 //如果数据库为空，添加初始化数据
 RestaurantsData.findOne((err, data) => {
-	if (!data) {
+	if(!data) {
 		restaurants.forEach(item => {
 			RestaurantsData.create(item);
 		})
