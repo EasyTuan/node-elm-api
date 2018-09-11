@@ -1,6 +1,6 @@
 # 前言
 
-为[nuxt-elm](https://github.com/EasyTuan/nuxt-elm)提供接口服务。
+基于 node.js + mongodb 构建的后台系统，为[nuxt-elm](https://github.com/EasyTuan/nuxt-elm)提供接口服务。
 
 如遇网络不佳，请移步[国内镜像加速节点](https://gitee.com/easytuan/node-elm-api)
 
