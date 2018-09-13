@@ -9,21 +9,23 @@ import chalk from 'chalk';
 
 const app = express();
 
-//用于接收post参数
+// 用于接收post参数
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
 	extended: false
 }));
 
-//用于接收cookie
+// 用于接收cookie
 app.use(cookieParser());
 
 app.use(express.static(path.join(__dirname, 'public'), {
 	maxAge: '30 days'
 }));
-app.use(express.static(path.join(__dirname, 'doc'), {
-	maxAge: '1 days'
-}));
+
+// 根目录重定向到api文档 https://easytuan.gitee.io/node-elm-api/doc
+app.get('/',(req, res, next) => {
+	res.redirect('https://easytuan.gitee.io/node-elm-api/doc');
+})
 
 router(app);
 
