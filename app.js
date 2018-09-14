@@ -1,6 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
+import cors from 'cors';
 import path from 'path';
 import config from 'config-lite';
 import db from './mongodb/db.js';
@@ -8,6 +9,13 @@ import router from './routes/index.js';
 import chalk from 'chalk';
 
 const app = express();
+
+//设置跨域白名单
+const corsOptions = {
+  origin: 'http://elm.caibowen.net',
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
+app.use(cors(corsOptions))
 
 // 用于接收post参数
 app.use(bodyParser.json());

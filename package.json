@@ -8,7 +8,7 @@
   "private": true,
   "apidoc": {
     "title": "elm-api接口文档",
-    "url" : "http://47.100.122.91:9000"
+    "url": "http://elm-api.caibowen.net"
   },
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon index.js",
@@ -32,6 +32,7 @@
     "chalk": "^2.4.1",
     "config-lite": "^1.6.0",
     "cookie-parser": "^1.4.3",
+    "cors": "^2.8.4",
     "cross-env": "^5.2.0",
     "express": "^4.16.3",
     "gm": "^1.23.1",
