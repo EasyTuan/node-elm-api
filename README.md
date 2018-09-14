@@ -14,7 +14,7 @@
 
 # API接口文档
 
-[接口文档地址](http://47.100.122.91:9000/)（基于apidoc）
+[接口文档地址](https://easytuan.gitee.io/node-elm-api/doc)（基于apidoc）
 
 # 技术栈
 

@@ -22,9 +22,8 @@ app.use(express.static(path.join(__dirname, 'public'), {
 	maxAge: '30 days'
 }));
 
-// 根目录重定向到api文档 https://easytuan.gitee.io/node-elm-api/doc
 app.get('/',(req, res, next) => {
-	res.redirect('https://easytuan.gitee.io/node-elm-api/doc');
+	res.send('欢迎访问elm-api后台系统，<a href="https://easytuan.gitee.io/node-elm-api/doc" target="_blank">API文档地址</a>');
 })
 
 router(app);
