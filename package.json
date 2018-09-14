@@ -8,7 +8,7 @@
   "private": true,
   "apidoc": {
     "title": "elm-api接口文档",
-    "url": "http://elm-api.caibowen.net"
+    "url": "https://elm-api.caibowen.net"
   },
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon index.js",
