@@ -18,7 +18,7 @@
 
 # 技术栈
 
-nodejs + express + mongodb + mongoose + es6/7
+nodejs + express + mongodb + mongoose + pm2
 
 ## 项目运行
 
@@ -148,7 +148,7 @@ npm run start
 
 >  开发环境 macOS 10.13.4 nodejs 8.11.3 Mongodb 4.0.1
 
->  部署环境 阿里云 windows server 2012 r2 64位
+>  部署环境 AWS CentOS 6.8 64位
 
 >  如有问题请直接在 Issues 中提，或者您发现问题并有非常好的解决方案，欢迎 PR 👍
 
