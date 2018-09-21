@@ -83,7 +83,7 @@ npm run start
 	│   │   ├── business.js             // 餐馆详情
 	│   │   └── restaurants.js          // 商家列表
 	│   └── user
-	│   │   ├── address.js              // 用户地址
+	│       ├── address.js              // 用户地址
 	│       └── user.js                 // 用户中心
 	├── doc                             // apidoc自动生成的静态文档
 	├── InitData                        // 模拟数据
