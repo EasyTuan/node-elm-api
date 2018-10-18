@@ -6,12 +6,8 @@ import config from 'config-lite';
 import db from './mongodb/db.js';
 import router from './routes/index.js';
 import chalk from 'chalk';
-import cors from 'cors';
 
 const app = express();
-
-// 允许跨域白名单
-app.use(cors({origin: /\.caibowen\.net$/}));
 
 // 用于接收post参数
 app.use(bodyParser.json());
