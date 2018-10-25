@@ -1,3 +1,5 @@
+简体中文 | [English](./README_zh-EN.md)
+
 # 前言
 
 基于 node.js + mongodb 构建的后台系统，为[nuxt-elm](https://github.com/EasyTuan/nuxt-elm)提供接口服务。

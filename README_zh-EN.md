@@ -1,3 +1,5 @@
+English | [简体中文](./README.md)
+
 # Foreword
 
 A background system built on node.js + mongodb provides interface services for [nuxt-elm] (https://github.com/EasyTuan/nuxt-elm).
