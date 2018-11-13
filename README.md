@@ -158,6 +158,7 @@ npm run start
 # 赞助
 
 如有帮助，欢迎赞助
+
 收到赞助款后，我会及时[更新赞助墙](https://caibowen.net/sponsor)
 
 <img src="screenshots/wechat.jpg" width="200px" /> <img src="screenshots/alipay.jpg" width="200px" />
