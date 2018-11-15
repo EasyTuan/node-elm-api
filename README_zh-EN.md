@@ -156,9 +156,9 @@ npm run start
 >  If you have any questions, please do so directly in the Issues, or you find the problem and have a very good solution, welcome PR 👍
 
 
-# Donation
+# Sponsorship
 
-If you are helpful, welcome to reward
+If you are helpful, welcome sponsorship
 
 After receiving the sponsorship, I will promptly update the [sponsorship wall](https://caibowen.net/sponsor)
 
